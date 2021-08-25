@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
@@ -9,7 +9,10 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <StatusBar style="dark" />
         <View>
-          <Text>HEY THER</Text>
+          <Text>Search Bar</Text>
+        </View>
+        <View>
+          <Text>Search Bar</Text>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

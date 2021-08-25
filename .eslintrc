@@ -1,3 +1,12 @@
-{
-    "extends": "@react-native-community"
+{   "root": true,
+    "extends": "@react-native-community",
+    "rules": {
+        "quotes": [
+          "error",
+          "double",
+          { "avoidEscape": true, "allowTemplateLiterals": false }
+        ]
+      },
+      "comma-dangle": ["error", "never"]
+
 }
