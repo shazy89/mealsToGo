@@ -7,6 +7,7 @@ const Search = () => {
   console.log(searchQuery);
   return (
     <Searchbar
+      style={{ width: "90%" }}
       placeholder="Search"
       onChangeText={onChangeSearch}
       value={searchQuery}
