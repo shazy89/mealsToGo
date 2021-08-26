@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { Searchbar } from "react-native-paper";
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
   const onChangeSearch = (query) => setSearchQuery(query);
+
   console.log(searchQuery);
   return (
     <Searchbar
