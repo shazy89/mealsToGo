@@ -7,15 +7,15 @@ import { sizes } from "../../../../utils/sizes";
 import { colors } from "../../../../utils/colors";
 
 const Title = styled.Text`
-  padding: ${sizes.sm}px;
-  color: red;
+  padding: ${(props) => props.theme.sizes[1]};
+  color: ${(props) => props.theme.colors.ui.error};
 `;
 const RestaurantCard = styled(Card)`
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 const RestaurandCardCover = styled(Card.Cover)`
-  padding: ${sizes.lg}px;
-  background-color: ${(props) => props.theme.colors.brand.primary};
+  padding: ${(props) => props.theme.sizes[1]};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 const RestaurantInfo = ({
   restaurant: {
@@ -39,5 +39,3 @@ const RestaurantInfo = ({
 };
 
 export default RestaurantInfo;
-
-//const styles = StyleSheet.create({});
