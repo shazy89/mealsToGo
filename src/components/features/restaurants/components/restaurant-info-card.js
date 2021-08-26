@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text } from "react-native";
 import { Avatar, Button, Card, Paragraph } from "react-native-paper";
 import styled from "styled-components";
-
+import { SvgXml } from "react-native-svg";
+import star from "../../../../../assets/star";
 const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.body};
@@ -43,6 +44,7 @@ const RestaurantInfo = ({
       <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
+        <SvgXml xml={star} width={20} height={20} />
         <Adress>{address}</Adress>
       </Info>
     </RestaurantCard>
