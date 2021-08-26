@@ -9,6 +9,7 @@ import { colors } from "../../../../utils/colors";
 const Title = styled.Text`
   padding: ${(props) => props.theme.sizes[1]};
   color: ${(props) => props.theme.colors.ui.error};
+  font-family: ${(props) => props.theme.fonts.body};
 `;
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
