@@ -15,7 +15,7 @@ const RestaurantCard = styled(Card)`
 `;
 const RestaurandCardCover = styled(Card.Cover)`
   padding: ${sizes.lg}px;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.brand.primary};
 `;
 const RestaurantInfo = ({
   restaurant: {
