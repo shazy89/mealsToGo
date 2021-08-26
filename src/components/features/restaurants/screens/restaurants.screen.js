@@ -9,7 +9,7 @@ const RestaurantsScreen = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
       <RestaurantSearch />
-      <RestaurantInfo />
+      <RestaurantInfo restaurant={{}} />
     </SafeAreaView>
   );
 };
