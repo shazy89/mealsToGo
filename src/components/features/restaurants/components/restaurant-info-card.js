@@ -10,7 +10,13 @@ const Title = styled.Text`
   padding: ${sizes.sm}px;
   color: red;
 `;
-
+const RestaurantCard = styled(Card)`
+  background-color: white;
+`;
+const RestaurandCardCover = styled(Card.Cover)`
+  padding: ${sizes.lg}px;
+  background-color: white;
+`;
 const RestaurantInfo = ({
   restaurant: {
     name = "Some Restaurant",
@@ -25,26 +31,13 @@ const RestaurantInfo = ({
   }
 }) => {
   return (
-    <Card style={styles.card} elevation={5}>
-      <Card.Cover key={name} style={styles.cover} source={{ uri: photos[0] }} />
+    <RestaurantCard elevation={5}>
+      <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
       <Title>{name}</Title>
-    </Card>
+    </RestaurantCard>
   );
 };
 
 export default RestaurantInfo;
 
-const styles = StyleSheet.create({
-  listItems: {
-    flex: 1,
-    backgroundColor: "blue",
-    padding: sizes.md
-  },
-  card: {
-    backgroundColor: "white"
-  },
-  cover: {
-    padding: sizes.lg,
-    backgroundColor: colors.white
-  }
-});
+//const styles = StyleSheet.create({});

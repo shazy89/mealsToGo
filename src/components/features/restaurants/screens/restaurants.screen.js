@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import RestaurantInfo from "../components/restaurant-info";
+import RestaurantInfo from "../components/restaurant-info-card";
 import RestaurantSearch from "../components/restaurant-search";
 const RestaurantsScreen = () => {
   return (
