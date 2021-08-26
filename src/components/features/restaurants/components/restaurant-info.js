@@ -1,7 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Avatar, Button, Card, Paragraph } from "react-native-paper";
+import styled from "styled-components";
+
 import { sizes } from "../../../../utils/sizes";
-import RestaurantCard from "./restaurant-card";
+import { colors } from "../../../../utils/colors";
+
+const Title = styled.Text`
+  padding: ${sizes.sm}px;
+  color: red;
+`;
+
 const RestaurantInfo = ({
   restaurant: {
     name = "Some Restaurant",
@@ -16,9 +25,10 @@ const RestaurantInfo = ({
   }
 }) => {
   return (
-    <View style={styles.listItems}>
-      <RestaurantCard name={name} photos={photos} />
-    </View>
+    <Card style={styles.card} elevation={5}>
+      <Card.Cover key={name} style={styles.cover} source={{ uri: photos[0] }} />
+      <Title>{name}</Title>
+    </Card>
   );
 };
 
@@ -29,5 +39,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "blue",
     padding: sizes.md
+  },
+  card: {
+    backgroundColor: "white"
+  },
+  cover: {
+    padding: sizes.lg,
+    backgroundColor: colors.white
   }
 });
