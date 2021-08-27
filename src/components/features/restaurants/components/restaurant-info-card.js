@@ -50,10 +50,13 @@ const RestaurantInfo = ({
       <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
-
+        <Spacer variant="left.large" />
         <Row>
           {ratingArray.map((x, index) => (
-            <SvgXml key={index} xml={star} width={20} height={20} />
+            <>
+              <Spacer variant="left.medium" />
+              <SvgXml key={index} xml={star} width={20} height={20} />
+            </>
           ))}
         </Row>
         <Adress>{address}</Adress>

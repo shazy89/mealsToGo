@@ -21,22 +21,22 @@ const BottomLarge = styled(View)`
   margin-bottom: 16px;
 `;
 const LeftSmall = styled(View)`
-  margin-bottom: 4px;
+  margin-left: 4px;
 `;
 const LeftMedium = styled(View)`
-  margin-bottom: 8px;
+  margin-left: 8px;
 `;
 const LeftLarge = styled(View)`
-  margin-bottom: 16px;
+  margin-left: 16px;
 `;
 const RightSmall = styled(View)`
-  margin-bottom: 4px;
+  margin-right: 4px;
 `;
 const RightMedium = styled(View)`
-  margin-bottom: 8px;
+  margin-right: 8px;
 `;
 const RightLarge = styled(View)`
-  margin-bottom: 16px;
+  margin-right: 16px;
 `;
 
 const Spacer = ({ variant }) => {
@@ -66,7 +66,7 @@ const Spacer = ({ variant }) => {
     case "Right.large":
       return <RightLarge />;
     default:
-      <TopSmall />;
+      return <TopSmall />;
   }
 };
 
