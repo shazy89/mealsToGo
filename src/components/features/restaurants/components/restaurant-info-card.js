@@ -4,7 +4,9 @@ import { Avatar, Button, Card, Paragraph } from "react-native-paper";
 import styled from "styled-components";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../../assets/star";
-import Spacer from "../../../spacer/spacer.component";
+{
+  //import { Spacer } from "../../../spacer/spacer.component";
+}
 const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.body};
@@ -50,11 +52,10 @@ const RestaurantInfo = ({
       <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
-        <Spacer variant="left.large" />
+
         <Row>
           {ratingArray.map((x, index) => (
             <>
-              <Spacer variant="left.medium" />
               <SvgXml key={index} xml={star} width={20} height={20} />
             </>
           ))}
