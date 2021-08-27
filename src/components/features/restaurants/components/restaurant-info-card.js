@@ -1,36 +1,20 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { Avatar, Button, Card, Paragraph } from "react-native-paper";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../../assets/star";
+import {
+  Title,
+  Adress,
+  RestaurantCard,
+  RestaurandCardCover,
+  Info,
+  Row
+} from "./restaurant-info-card.styles";
 {
-  //import { Spacer } from "../../../spacer/spacer.component";
+  // import { Spacer } from "../../../spacer/spacer.component";
 }
-const Title = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.body};
-  font-weight: ${(props) => props.theme.fontWeights.bold};
-
-  color: ${(props) => props.theme.colors.ui.error};
-`;
-const Adress = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-const RestaurandCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.sizes[1]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-const Info = styled(View)`
-  padding: ${(props) => props.theme.sizes[1]};
-`;
-const Row = styled(View)`
-  flex-direction: row;
-`;
 
 const RestaurantInfo = ({
   restaurant: {
