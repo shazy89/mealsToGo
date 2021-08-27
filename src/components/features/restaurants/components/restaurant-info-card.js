@@ -4,6 +4,7 @@ import { Avatar, Button, Card, Paragraph } from "react-native-paper";
 import styled from "styled-components";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../../assets/star";
+import Spacer from "../../../spacer/spacer.component";
 const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.body};
@@ -25,6 +26,9 @@ const RestaurandCardCover = styled(Card.Cover)`
 const Info = styled(View)`
   padding: ${(props) => props.theme.sizes[1]};
 `;
+const Row = styled(View)`
+  flex-direction: row;
+`;
 
 const RestaurantInfo = ({
   restaurant: {
@@ -35,16 +39,23 @@ const RestaurantInfo = ({
     ],
     address = "645 new york ave",
     isOpenNow = true,
-    rating = 4,
+    rating = 3,
     isClosedTemporarily
   }
 }) => {
+  const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
     <RestaurantCard elevation={5} style={{ marginTop: 20, width: "90%" }}>
       <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
-        <SvgXml xml={star} width={20} height={20} />
+
+        <Row>
+          {ratingArray.map((x, index) => (
+            <SvgXml key={index} xml={star} width={20} height={20} />
+          ))}
+        </Row>
         <Adress>{address}</Adress>
       </Info>
     </RestaurantCard>
