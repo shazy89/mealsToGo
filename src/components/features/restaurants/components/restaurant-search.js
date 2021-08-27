@@ -14,7 +14,6 @@ export default RestaurantSearch;
 
 const styles = StyleSheet.create({
   searchBar: {
-    flex: 0.1,
-    justifyContent: "center"
+    alignSelf: "center"
   }
 });

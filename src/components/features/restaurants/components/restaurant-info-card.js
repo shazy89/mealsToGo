@@ -1,7 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { Avatar, Button, Card, Paragraph } from "react-native-paper";
-import styled from "styled-components/native";
+
+import { Text } from "../../../typography/text.component";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../../assets/star";
 import {
@@ -12,9 +11,7 @@ import {
   Info,
   Row
 } from "./restaurant-info-card.styles";
-{
-  // import { Spacer } from "../../../spacer/spacer.component";
-}
+import { Spacer } from "../../../spacer/spacer.component";
 
 const RestaurantInfo = ({
   restaurant: {
@@ -32,10 +29,10 @@ const RestaurantInfo = ({
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
-    <RestaurantCard elevation={5} style={{ marginTop: 20, width: "90%" }}>
+    <RestaurantCard elevation={5}>
       <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
-        <Title>{name}</Title>
+        <Text>{name}</Text>
 
         <Row>
           {ratingArray.map((x, index) => (
