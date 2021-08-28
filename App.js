@@ -12,8 +12,11 @@ import {
   Oswald_400Regular
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 export default function App() {
+  const Tab = createBottomTabNavigator();
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular
   });
@@ -22,11 +25,15 @@ export default function App() {
   });
   if (!oswaldLoaded || !latoLoaded) return null;
   return (
-    <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <RestaurantsScreen />
-      </ThemeProvider>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        <ThemeProvider theme={theme}>
+          <Tab.Navigator>
+            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+          </Tab.Navigator>
+        </ThemeProvider>
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }
 
