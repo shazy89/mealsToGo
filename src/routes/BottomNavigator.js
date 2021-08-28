@@ -6,21 +6,7 @@ import { Settings } from "../components/features/restaurants/screens/settings.sc
 import { Text } from "../components/typography/text.component";
 import { SafeArea } from "../components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
-
-const TAB_ICON = {
-  Restaurants: "md-restaurant",
-  Map: "map",
-  Settings: "settings"
-};
-const COMPONENT_NAME = {
-  0: Restaurants,
-  1: Map,
-  2: Settings
-};
-
-const tabBarIcon = (tabIcon, color, size) => (
-  <Ionicons name={TAB_ICON[tabIcon]} color={color} size={size} />
-);
+import { COMPONENT_NAME, tabBarIcon, TAB_ICON } from "./NavigatorTab";
 
 const BottomNavigator = () => {
   const Tab = createBottomTabNavigator();
