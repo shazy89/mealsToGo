@@ -1,10 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import {
-  SafeAreaProvider,
-  initialWindowMetrics
-} from "react-native-safe-area-context";
-import RestaurantsScreen from "./src/components/features/restaurants/screens/restaurants.screen";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./src/infrastructure/theme";
 import {
@@ -13,10 +9,9 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import BottomNavigator from "./src/routes/BottomNavigator";
 
 export default function App() {
-  const Tab = createBottomTabNavigator();
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular
   });
@@ -28,9 +23,7 @@ export default function App() {
     <NavigationContainer>
       <SafeAreaProvider>
         <ThemeProvider theme={theme}>
-          <Tab.Navigator>
-            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-          </Tab.Navigator>
+          <BottomNavigator />
         </ThemeProvider>
       </SafeAreaProvider>
     </NavigationContainer>
