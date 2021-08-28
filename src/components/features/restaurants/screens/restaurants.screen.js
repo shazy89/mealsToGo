@@ -10,10 +10,19 @@ import { Spacer } from "../../../spacer/spacer.component";
 const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
+const SafeAreaViewStyled = styled.SafeAreaView`
+  flex: 1;
+  background-color: #fff;
+`;
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16
+  }
+})``;
 
 const RestaurantsScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaViewStyled style={styles.container}>
       <Spacer
         position="top"
         size={Platform.OS === "android" ? "large" : null}
@@ -22,7 +31,7 @@ const RestaurantsScreen = () => {
       <SearchContainer>
         <RestaurantSearch />
       </SearchContainer>
-      <FlatList
+      <RestaurantList
         data={[
           { name: 1 },
           { name: 2 },
@@ -45,9 +54,8 @@ const RestaurantsScreen = () => {
           </Spacer>
         )}
         keyExtractor={(item) => item.name}
-        contentContainerStyle={{ padding: 30 }}
       />
-    </SafeAreaView>
+    </SafeAreaViewStyled>
   );
 };
 
@@ -55,7 +63,6 @@ export default RestaurantsScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff"
   }
 });

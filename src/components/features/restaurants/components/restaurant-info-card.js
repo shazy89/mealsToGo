@@ -40,6 +40,9 @@ const RestaurantInfo = ({
               <SvgXml key={index} xml={star} width={20} height={20} />
             </>
           ))}
+          <Spacer position="left" size="large">
+            {isClosedTemporarily ? <Text>Yess</Text> : <Text>No</Text>}
+          </Spacer>
         </Row>
         <Adress>{address}</Adress>
       </Info>
