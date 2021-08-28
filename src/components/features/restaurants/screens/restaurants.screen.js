@@ -3,7 +3,7 @@ import { StyleSheet, Platform, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
-import RestaurantInfo from "../components/restaurant-info-card";
+import RestaurantInfoCard from "../components/restaurant-info-card";
 import RestaurantSearch from "../components/restaurant-search";
 import { Spacer } from "../../../spacer/spacer.component";
 
@@ -33,17 +33,27 @@ const RestaurantsScreen = () => {
       </SearchContainer>
       <RestaurantList
         data={[
-          {
-            id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-            title: "First Item"
-          },
-          {
-            id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-            title: "Second Item"
-          }
+          { name: "1" },
+          { name: "2" },
+          { name: "3" },
+          { name: "4" },
+          { name: "5" },
+          { name: "6" },
+          { name: "7" },
+          { name: "8" },
+          { name: "9" },
+          { name: "10" },
+          { name: "11" },
+          { name: "12" },
+          { name: "13" },
+          { name: "14" }
         ]}
-        renderItem={() => <RestaurantInfo restaurant={{}} />}
-        keyExtractor={(item) => item.id}
+        renderItem={() => (
+          <Spacer position="bottom" size="large">
+            <RestaurantInfoCard restaurant={{}} />
+          </Spacer>
+        )}
+        keyExtractor={(item) => item.name}
       />
     </SafeAreaViewStyled>
   );
