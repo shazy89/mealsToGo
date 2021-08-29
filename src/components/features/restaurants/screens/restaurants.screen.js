@@ -22,11 +22,12 @@ const RestaurantList = styled(FlatList).attrs({
 
 const RestaurantsScreen = () => {
   const restaurantContext = useContext(RestaurantsContext);
-
+  console.log(restaurantContext);
   const renderItem = useCallback(({ item }) => {
+    console.log(item);
     return (
       <Spacer key={item + "A"} position="bottom" size="large">
-        <RestaurantInfoCard key={item} restaurant={{}} />
+        <RestaurantInfoCard key={item} restaurant={item} />
       </Spacer>
     );
   }, []);

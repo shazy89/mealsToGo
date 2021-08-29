@@ -11,6 +11,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomNavigator from "./src/routes/BottomNavigator";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular

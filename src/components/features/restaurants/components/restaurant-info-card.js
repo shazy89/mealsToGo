@@ -27,7 +27,7 @@ const RestaurantInfo = ({
   }
 }) => {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
-  console.log("Children");
+
   return (
     <RestaurantCard elevation={5}>
       <RestaurandCardCover key={name} source={{ uri: photos[0] }} />
