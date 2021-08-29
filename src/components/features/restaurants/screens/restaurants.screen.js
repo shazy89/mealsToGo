@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { StyleSheet, Platform, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -21,6 +21,14 @@ const RestaurantList = styled(FlatList).attrs({
 })``;
 
 const RestaurantsScreen = () => {
+  const renderItem = useCallback(({ item }) => {
+    return (
+      <Spacer key={item + "A"} position="bottom" size="large">
+        <RestaurantInfoCard key={item} restaurant={{}} />
+      </Spacer>
+    );
+  }, []);
+  const keyExtractor = useCallback((item) => item.name, []);
   return (
     <SafeAreaViewStyled style={styles.container}>
       <Spacer
@@ -48,12 +56,8 @@ const RestaurantsScreen = () => {
           { name: "13" },
           { name: "14" }
         ]}
-        renderItem={() => (
-          <Spacer position="bottom" size="large">
-            <RestaurantInfoCard restaurant={{}} />
-          </Spacer>
-        )}
-        keyExtractor={(item) => item.name}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
       />
     </SafeAreaViewStyled>
   );
