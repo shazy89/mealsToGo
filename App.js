@@ -10,7 +10,7 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomNavigator from "./src/routes/BottomNavigator";
-import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular
@@ -22,11 +22,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <SafeAreaProvider>
-        <ThemeProvider theme={theme}>
-          <BottomNavigator />
-        </ThemeProvider>
-      </SafeAreaProvider>
+      <RestaurantsContextProvider>
+        <SafeAreaProvider>
+          <ThemeProvider theme={theme}>
+            <BottomNavigator />
+          </ThemeProvider>
+        </SafeAreaProvider>
+      </RestaurantsContextProvider>
     </NavigationContainer>
   );
 }
